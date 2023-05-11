@@ -1,61 +1,70 @@
-
 <div class="contenedor">
   <h2 style="text-align: center">
     {{ name }}
   </h2>
-<div class=" d-flex justify-content-center">
-  <table class="table table-sm table-borderless align-middle ">
-    <thead></thead>
-    <tbody>
-      <tr>
-        <th scope="row">Nombre</th>
-        <td scope="col">
-          <input
-            class="form-control"
-            type="text"
-            aria-label="default input example"
-          />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">CIF</th>
-        <td scope="col">
-          <input
-            class="form-control"
-            type="text"
-            aria-label="default input example"
-          />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Dirección</th>
-        <td scope="col">
-          <input
-            class="form-control"
-            type="text"
-            aria-label="default input example"
-          />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Grupo</th>
-        <td>
-          <select class="form-select w-75" aria-label="Default select example">
-            <option selected>Sin definir</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-       
-      </tr>
-    </tbody>
-  </table>
- 
-</div>
-<input class="btn btn-primary btn-sm" type="button" value="Guardar">
+  <div class="d-flex justify-content-center">
+    <table class="table table-sm table-borderless align-middle">
+      <thead></thead>
+      <tbody>
+        <tr>
+          <th scope="row">Nombre</th>
+          <td scope="col">
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="nombre"
+              name="nombre"
+              aria-label="default input example"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">CIF</th>
+          <td scope="col">
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="cif"
+              name="cif"
+              aria-label="default input example"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Dirección</th>
+          <td scope="col">
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="direccion"
+              name="direccion"
+              aria-label="default input example"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Grupo</th>
+          <td>
+            <select
+              class="form-select w-75"
+              aria-label="Default select example"
+              type="number"
+              [(ngModel)]="grupo"
+              name="grupo"
+            >
+              <option selected>Sin definir</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </td>
+        </tr>
+        <tr></tr>
+      </tbody>
+    </table>
+  </div>
+  <input class="btn btn-primary btn-sm" (click)="guardar()" type="button" value="Guardar" />
 
+  <app-listado></app-listado>
 </div>
 <router-outlet></router-outlet>
