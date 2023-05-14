@@ -65,6 +65,8 @@
   </div>
   <input class="btn btn-primary btn-sm" (click)="guardar()" type="button" value="Guardar" />
 
-  <app-listado></app-listado>
+  <app-listado [formValues]="formValues"></app-listado>
+
 </div>
 <router-outlet></router-outlet>
+

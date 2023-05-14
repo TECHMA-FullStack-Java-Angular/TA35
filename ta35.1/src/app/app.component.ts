@@ -14,31 +14,28 @@ export class AppComponent {
   public cif: string = '';
   public direccion: string = '';
   public grupo: number = 0;
-  
 
-  @Output() formValues: EventEmitter<any> = new EventEmitter();
+  @Output() formValues: any[] = []; // Cambiar a un array
 
   guardar() {
+    console.log('Guardar método ejecutado');
     let values = {
       nombre: this.nombre,
       cif: this.cif,
       direccion: this.direccion,
       grupo: this.grupo,
     };
-
-    this.formValues.emit(values);
-
+    console.log(values);
+    this.formValues.push(values); // Agregar el objeto values al array formValues
     this.resetear();
-
   }
 
-  resetear(){
-
-      this.nombre = '';
-      this.cif = '';
-      this.direccion = '';
-      this.grupo = 0;
-    
+  resetear() {
+    this.nombre = '';
+    this.cif = '';
+    this.direccion = '';
+    this.grupo = 0;
   }
 }
+
 
