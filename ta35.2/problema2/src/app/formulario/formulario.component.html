@@ -60,6 +60,7 @@
           formControlName="respuesta"
           placeholder="Respuesta"
           required
+          pattern="4"
           [class.is-invalid]="formulario.get('respuesta')?.invalid && formulario.get('respuesta')?.touched"
           [class.is-valid]="formulario.get('respuesta')?.valid && formulario.get('respuesta')?.touched"
         />
