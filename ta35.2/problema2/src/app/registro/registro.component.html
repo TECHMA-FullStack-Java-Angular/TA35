@@ -1,1 +1,32 @@
-<p>registro works!</p>
+<div class="table-responsive">
+    <h2 style="text-align: center">{{ name }}</h2>
+  
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mensaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let value of formValues; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ value.nombre }}</td>
+            <td>{{ value.email }}</td>
+            <td>{{ value.mensaje }}</td>
+          </tr>
+          <tr *ngIf="formValues && formValues.length">
+            <th scope="row">{{ formValues.length + 1 }}</th>
+            <td><div class="border-0">{{ nuevoNombre }}</div></td>
+            <td><div class="border-0">{{ nuevoEmail }}</div></td>
+            <td><div class="border-0">{{ nuevaMensaje }}</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+

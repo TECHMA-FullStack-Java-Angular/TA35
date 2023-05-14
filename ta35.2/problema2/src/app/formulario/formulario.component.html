@@ -1,75 +1,124 @@
 <div class="contenedor">
-    <h2 style="text-align: center">
-      {{ name }}
-    </h2>
-  
-    <form [formGroup]="formulario" (ngSubmit)="guardar()">
-      <div class="mb-3">
-        <label for="inputName" class="form-label fw-bold">Nombre</label>
-        <input
-          type="text"
-          id="inputName"
-          class="form-control"
-          formControlName="nombre"
-          placeholder="Nombre y Apellido"
-          required
-          [class.is-invalid]="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched"
-          [class.is-valid]="formulario.get('nombre')?.valid && formulario.get('nombre')?.touched"
-        />
-        <div class="invalid-feedback text-danger" *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
-          Introduzca su nombre y apellido
-        </div>
+  <h2 style="text-align: center">
+    {{ name }}
+  </h2>
+
+  <form [formGroup]="formulario" (ngSubmit)="guardar()">
+    <div class="mb-3">
+      <label for="inputName" class="form-label fw-bold">Nombre</label>
+      <input
+        type="text"
+        id="inputName"
+        class="form-control"
+        formControlName="nombre"
+        placeholder="Nombre y Apellido"
+        required
+        [class.is-invalid]="
+          formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched
+        "
+        [class.is-valid]="
+          formulario.get('nombre')?.valid && formulario.get('nombre')?.touched
+        "
+      />
+      <div
+        class="invalid-feedback text-danger"
+        *ngIf="
+          formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched
+        "
+      >
+        Introduzca su nombre y apellido
       </div>
-  
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label fw-bold">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="exampleFormControlInput1"
-          formControlName="email"
-          placeholder="name@example.com"
-          [class.is-invalid]="formulario.get('email')?.invalid && formulario.get('email')?.touched"
-        />
-        <div class="invalid-feedback text-danger" *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
-          Introduzca un email válido
-        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label fw-bold"
+        >Email</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        formControlName="email"
+        placeholder="name@example.com"
+        [class.is-invalid]="
+          formulario.get('email')?.invalid && formulario.get('email')?.touched
+        "
+      />
+      <div
+        class="invalid-feedback text-danger"
+        *ngIf="
+          formulario.get('email')?.invalid && formulario.get('email')?.touched
+        "
+      >
+        Introduzca un email válido
       </div>
-  
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label fw-bold">Mensaje</label>
-        <textarea
-          class="form-control"
-          id="exampleFormControlTextarea1"
-          rows="3"
-          formControlName="mensaje"
-          [class.is-invalid]="formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched"
-          [class.is-valid]="formulario.get('mensaje')?.valid && formulario.get('mensaje')?.touched"
-        ></textarea>
-        <div class="invalid-feedback text-danger" *ngIf="formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched">
-          Introduzca un mensaje
-        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label fw-bold"
+        >Mensaje</label
+      >
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        formControlName="mensaje"
+        [class.is-invalid]="
+          formulario.get('mensaje')?.invalid &&
+          formulario.get('mensaje')?.touched
+        "
+        [class.is-valid]="
+          formulario.get('mensaje')?.valid && formulario.get('mensaje')?.touched
+        "
+      ></textarea>
+      <div
+        class="invalid-feedback text-danger"
+        *ngIf="
+          formulario.get('mensaje')?.invalid &&
+          formulario.get('mensaje')?.touched
+        "
+      >
+        Introduzca un mensaje
       </div>
-  
-      <div class="mb-3">
-        <label for="inputValidation" class="form-label fw-bold">1+3=?</label>
-        <input
-          type="number"
-          id="inputValidation"
-          class="form-control"
-          formControlName="respuesta"
-          placeholder="Respuesta"
-          required
-          pattern="4"
-          [class.is-invalid]="formulario.get('respuesta')?.invalid && formulario.get('respuesta')?.touched"
-          [class.is-valid]="formulario.get('respuesta')?.valid && formulario.get('respuesta')?.touched"
-        />
-        <div class="invalid-feedback text-danger" *ngIf="formulario.get('respuesta')?.invalid && formulario.get('respuesta')?.touched">
-          Validación anti-spam incorrecta
-        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="inputValidation" class="form-label fw-bold">1+3=?</label>
+      <input
+        type="number"
+        id="inputValidation"
+        class="form-control"
+        formControlName="respuesta"
+        placeholder="Respuesta"
+        required
+        pattern="4"
+        [class.is-invalid]="
+          formulario.get('respuesta')?.invalid &&
+          formulario.get('respuesta')?.touched
+        "
+        [class.is-valid]="
+          formulario.get('respuesta')?.valid &&
+          formulario.get('respuesta')?.touched
+        "
+      />
+      <div
+        class="invalid-feedback text-danger"
+        *ngIf="
+          formulario.get('respuesta')?.invalid &&
+          formulario.get('respuesta')?.touched
+        "
+      >
+        Validación anti-spam incorrecta
       </div>
-  
-      <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Enviar</button>
-    </form>
-  </div>
-  
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="formulario.invalid"
+    >
+      Enviar
+    </button>
+  </form>
+  <app-registro *ngIf="formValues && formValues.length" [formValues]="formValues"></app-registro>
+</div>

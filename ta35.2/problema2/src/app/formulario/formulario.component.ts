@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css']
+  styleUrls: ['./formulario.component.css'],
 })
 export class FormularioComponent {
   name = 'Formulario de contacto';
@@ -13,13 +13,15 @@ export class FormularioComponent {
   email: string = '';
   mensaje: string = '';
   respuesta: number = 0;
+  formValues: any[] = []; // Variable para almacenar los valores del formulario
+
 
   constructor(private formBuilder: FormBuilder) {
     this.formulario = this.formBuilder.group({
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       mensaje: ['', Validators.required],
-      respuesta: ['', [Validators.required]]
+      respuesta: ['', [Validators.required]],
     });
   }
 
@@ -33,6 +35,8 @@ export class FormularioComponent {
         respuesta: this.formulario.get('respuesta')?.value,
       };
       console.log(values);
+      this.formValues.push(values); // Agrega los valores del formulario al array formValues
+
       this.resetear();
     } else {
       console.log('El formulario es inválido');
@@ -46,5 +50,3 @@ export class FormularioComponent {
     this.respuesta = 0;
   }
 }
-
-
