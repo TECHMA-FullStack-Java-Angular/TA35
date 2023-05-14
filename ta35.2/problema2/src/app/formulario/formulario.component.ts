@@ -34,9 +34,10 @@ export class FormularioComponent {
       };
       console.log(values);
       this.resetear();
+    } else {
+      console.log('El formulario es inválido');
     }
   }
-  
 
   resetear() {
     this.nombre = '';
@@ -45,4 +46,5 @@ export class FormularioComponent {
     this.respuesta = 0;
   }
 }
+
 
