@@ -1,0 +1,79 @@
+<div class="contenedor">
+    <h2 style="text-align: center">
+      {{ name }}
+    </h2>
+  
+    <div>
+      <label for="inputName" class="form-label fw-bold">Nombre</label>
+      <input
+        type="text"
+        id="inputName"
+        class="form-control"
+        [(ngModel)]="nombre"
+        placeholder="Nombre y Apellido"
+        required
+        [class.is-invalid]="nombre === ''"
+        [class.is-valid]="nombre !== ''"
+      />
+      <div class="invalid-feedback text-danger">
+        Introduzca su nombre y apellido
+      </div>
+      <div class="valid-feedback">
+        Nombre y apellido introducidos correctamente
+      </div>
+  
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label fw-bold">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          [(ngModel)]="email"
+          placeholder="name@example.com"
+          name="email"
+          #emailInput="ngModel"
+          required
+
+          [class.is-invalid]="email === '' || emailInput.invalid"
+        />
+        <div *ngIf="emailInput.invalid" class="invalid-feedback">
+          Introduzca un email válido
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label fw-bold">Mensaje</label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          [(ngModel)]="mensaje"
+          required
+          [class.is-invalid]="mensaje === ''"
+          [class.is-valid]="mensaje !== ''"
+        ></textarea>
+        <div class="invalid-feedback text-danger">
+          Introduzca un mensaje
+        </div>
+      </div>
+  
+      <label for="inputValidation" class="form-label fw-bold">1+3=?</label>
+      <input
+        type="number"
+        id="inputValidation"
+        class="form-control"
+        [(ngModel)]="respuesta"
+        placeholder="Respuesta"
+        required
+        [class.is-invalid]="respuesta !== 4"
+        [class.is-valid]="respuesta === 4"
+      />
+      <div class="invalid-feedback text-danger">
+        Validación anti-span incorrecta
+      </div>
+  
+      <button type="button" class="btn btn-primary" (click)="guardar()" >Enviar</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

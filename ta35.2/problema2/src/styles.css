@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+.contenedor{
+    margin-right: 20%;
+    margin-left: 20%;
+    padding: 5%;
+}
+h2{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
